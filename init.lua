@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.opt.termguicolors = true
 
 -- Bootstrap lazy.nvim, the package manager
 local lazy_path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
