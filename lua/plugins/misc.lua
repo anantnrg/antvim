@@ -35,5 +35,15 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-	}
+	},
+	{
+		"nmac427/guess-indent.nvim",
+		event = "BufReadPre",
+		config = true,
+	},
+	{
+		"kylechui/nvim-surround",
+		event = "VeryLazy",
+		config = true,
+	},
 }

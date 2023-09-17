@@ -72,14 +72,15 @@ return {
 			})
 
 			require("cmp_git").setup()
-		end
+		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
 		lazy = true,
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+			local capabilities =
+				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 			capabilities.textDocument.foldingRange = {
 				dynamicRegistration = false,
 				lineFoldingOnly = true,
@@ -96,7 +97,6 @@ return {
 	},
 	{
 		"onsails/lspkind.nvim",
-		lazy = true,
-		config = true,
+		event = "LspAttach",
 	},
 }
