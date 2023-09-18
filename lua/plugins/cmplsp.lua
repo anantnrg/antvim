@@ -1,3 +1,5 @@
+local map = require("core.utils").map
+
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -98,5 +100,39 @@ return {
 	{
 		"onsails/lspkind.nvim",
 		event = "LspAttach",
+	},
+	{
+		"dnlhc/glance.nvim",
+		cmd = "Glance",
+		init = function()
+			map({
+				g = {
+					d = { "<CMD>Glance definitions<CR>", "Peek definition(s)" },
+					r = { "<CMD>Glance references<CR>", "Peek references" },
+					D = { "<CMD>Glance type_definitions<CR>", "Peek declarations" },
+					i = { "<CMD>Glance implementations<CR>", "Peek implementations" },
+				},
+			})
+		end,
+		config = function()
+			local glance = require("glance")
+			local actions = glance.actions
+			glance.setup({
+				height = 25,
+				border = {
+					enable = true,
+					top_char = "▔",
+					bottom_char = "▁",
+				},
+				theme = { enable = true, mode = "auto" },
+				mappings = {
+					list = {
+						["<C-v>"] = actions.jump_vsplit,
+						["<C-x>"] = actions.jump_split,
+						["<C-t>"] = actions.jump_tab,
+					},
+				},
+			})
+		end,
 	},
 }

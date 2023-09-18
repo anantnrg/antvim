@@ -39,14 +39,6 @@ return {
 			telescope.load_extension("media_files")
 			telescope.load_extension("persisted")
 			telescope.load_extension("ast_grep")
-
-			require("telescope-all-recent").setup({
-				default = { sorting = "frecency" },
-				pickers = {
-					live_grep = { disable = false },
-					grep_string = { disable = false },
-				},
-			})
 		end,
 	},
 }
