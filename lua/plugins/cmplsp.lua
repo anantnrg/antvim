@@ -11,9 +11,11 @@ return {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-git",
+			"hrsh7th/cmp-emoji",
 			"saadparwaiz1/cmp_luasnip",
 			"davidsierradz/cmp-conventionalcommits",
 			"L3MON4D3/LuaSnip",
+			"chrisgrieser/cmp-nerdfont",
 		},
 		config = function()
 			local cmp = require("cmp")
@@ -28,8 +30,14 @@ return {
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lua" },
 					{ name = "luasnip" },
+					{ name = "crates" },
+				}, {
 					{ name = "path" },
-				}, { { name = "buffer" } }),
+					{ name = "nerdfont" },
+					{ name = "emoji" },
+				}, {
+					{ name = "buffer" },
+				}),
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
@@ -79,6 +87,37 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		lazy = true,
+		init = function()
+			map({
+				K = { vim.lsp.buf.hover, "Show documentation" },
+				H = {
+					function()
+						vim.diagnostic.open_float({ border = "rounded" })
+					end,
+					"Show diagnostics",
+				},
+				["<C-k>"] = { vim.lsp.buf.signature_help, "Interactive signature help" },
+				["<leader>r"] = {
+					name = "refactor",
+					n = { vim.lsp.buf.rename, "Interactive rename" },
+					f = { vim.lsp.buf.format, "Format code" },
+				},
+				["<leader>a"] = {
+					vim.lsp.buf.code_action,
+					"Interactive list of code actions",
+					mode = { "n", "v" },
+				},
+				["<leader>i"] = {
+					function()
+						vim.lsp.inlay_hint(0)
+					end,
+					"Toggle inlay hints for buffer",
+				},
+			})
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+			vim.lsp.handlers["textDocument/signatureHelp"] =
+				vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+		end,
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities =
