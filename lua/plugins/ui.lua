@@ -1,3 +1,5 @@
+local mape = require("core.utils").map
+
 return {
 	{
 		"mvllow/modes.nvim",
@@ -57,8 +59,18 @@ return {
 		config = function()
 			local alpha = require("alpha")
 			local dashboard = require("alpha.themes.dashboard")
+			local randomquote = require("core.utils").randomquote
+
+			math.randomseed(os.time())
+
+			local function pick_color()
+				local colors = { "String", "Identifier", "Keyword", "Number" }
+				return colors[math.random(#colors)]
+			end
 
 			dashboard.section.header.val = {
+				"",
+				"",
 				"███▄▄▄▄      ▄████████  ▄██████▄   ▄█    █▄   ▄█    ▄▄▄▄███▄▄▄▄   ",
 				"███▀▀▀██▄   ███    ███ ███    ███ ███    ███ ███  ▄██▀▀▀███▀▀▀██▄ ",
 				"███   ███   ███    █▀  ███    ███ ███    ███ ███▌ ███   ███   ███ ",
@@ -67,21 +79,86 @@ return {
 				"███   ███   ███    █▄  ███    ███ ███    ███ ███  ███   ███   ███",
 				"███   ███   ███    ███ ███    ███ ███    ███ ███  ███   ███   ███ ",
 				" ▀█   █▀    ██████████  ▀██████▀   ▀██████▀  █▀    ▀█   ███   █▀",
+				"",
+				"",
 			}
 
+			dashboard.section.header.opts.hl = pick_color()
+
 			dashboard.section.buttons.val = {
-				dashboard.button("e", "  > New file", ":ene <BAR> startinsert <CR>"),
-				dashboard.button("f", "  > Find file", ":cd $HOME/ | Telescope find_files<CR>"),
-				dashboard.button("r", "  > Recent", ":Telescope oldfiles<CR>"),
+				dashboard.button("e", "  -> New file", ":ene <BAR> startinsert <CR>"),
+				dashboard.button("f", "  -> Find file", ":cd $HOME/ | Telescope find_files<CR>"),
+				dashboard.button("r", "  -> Recent", ":Telescope oldfiles<CR>"),
 				dashboard.button(
 					"s",
-					"  > Settings",
+					"  -> Settings",
 					":e $HOME/.config/nvim/init.lua | :cd %:p:h | wincmd k | pwd<CR>"
 				),
-				dashboard.button("q", "  > Quit NVIM", ":qa<CR>"),
+				dashboard.button("q", "  -> Quit NeoVim <noob>", ":qa<CR>"),
 			}
+
+			dashboard.section.footer.val = randomquote()
+			dashboard.section.footer.opts.hl = pick_color()
 
 			alpha.setup(dashboard.opts)
 		end,
+	},
+	{
+		"folke/noice.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+		enabled = true,
+		lazy = false,
+		opts = {
+			presets = {
+				bottom_search = false,
+				command_palette = true,
+				long_message_to_split = true,
+				lsp_doc_border = true,
+			},
+			views = {
+				messages = { backend = "popup" },
+			},
+			popupmenu = { enabled = true, backend = "nui" },
+		},
+	},
+	{
+		"stevearc/dressing.nvim",
+		event = "VeryLazy",
+		opts = {
+			input = { enabled = false },
+			select = { enabled = true },
+		},
+	},
+	-- indent lines. kinda like rainbow indent for vscode
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
+		opts = {
+			show_current_context = true,
+			show_current_context_start = false,
+			use_treesitter = true,
+			use_treesitter_scope = false,
+			max_indent_increase = 1,
+			show_trailing_blankline_indent = false,
+			blankline_char_priority = 10,
+			integrations = {
+				neotree = {
+					enabled = true,
+					show_root = false,
+					transparent_panel = false,
+				},
+			},
+		},
+	},
+	{
+		"rcarriga/nvim-notify",
+		lazy = false,
+		opts = {
+			top_down = true,
+			max_width = 100,
+		},
 	},
 }

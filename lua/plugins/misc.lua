@@ -76,4 +76,20 @@ return {
 			})
 		end,
 	},
+	{
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup({
+				padding = true,
+				sticky = false,
+				toggler = {
+					line = "gcc",
+					block = "gbc",
+				},
+				mappings = {
+					basic = true,
+				},
+			})
+		end,
+	},
 }

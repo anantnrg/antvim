@@ -8,6 +8,8 @@ local map = vim.keymap.set
 
 map("n", ";", ":")
 
+map("n", "<leader><leader>", "<cmd>noh<CR>")
+
 map("i", "<C-j>", "<C-o>gj")
 map("i", "<C-k>", "<C-o>gk")
 map("i", "<C-h>", "<Left>")
