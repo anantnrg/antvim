@@ -38,7 +38,6 @@ opt.listchars = {
 	precedes = "«",
 	extends = "»",
 	space = "⋅",
-	eol = "↴",
 }
 opt.autoindent = true
 opt.expandtab = false

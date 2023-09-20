@@ -161,4 +161,24 @@ return {
 			max_width = 100,
 		},
 	},
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		config = function()
+			local bufferline = require("bufferline")
+
+			bufferline.setup({
+				options = {
+					style_preset = bufferline.style_preset.minimal,
+					indication = {
+						icon = "▎",
+						style = "underline",
+					},
+					diagnostics = "nvim_lsp",
+					separator_style = "thick",
+				},
+			})
+		end,
+	},
 }
