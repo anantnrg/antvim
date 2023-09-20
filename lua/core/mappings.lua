@@ -31,7 +31,7 @@ map("n", "<leader>fb", builtin.buffers, {})
 map("n", "<leader>fh", builtin.help_tags, {})
 map("n", "<leader>th", builtin.colorscheme, {})
 
--- Bufferkeymaps
+-- Buffer keymaps
 map("n", "<Tab>", "<cmd> BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev<CR>")
 map("n", "<leader>x", "<cmd> bd<CR>")

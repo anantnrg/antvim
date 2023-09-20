@@ -100,6 +100,8 @@ return {
 			dashboard.section.footer.val = randomquote()
 			dashboard.section.footer.opts.hl = pick_color()
 
+			vim.api.nvim_create_autocmd("VimEnter", { command = "Alpha" })
+
 			alpha.setup(dashboard.opts)
 		end,
 	},
