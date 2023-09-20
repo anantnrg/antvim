@@ -1,4 +1,4 @@
-local mape = require("core.utils").map
+local map = require("core.utils").map
 
 return {
 	{
