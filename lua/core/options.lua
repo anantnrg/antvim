@@ -20,7 +20,7 @@ g.gruvbox_material_enable_italic = 1
 vim.cmd.colorscheme("gruvbox-material")
 
 opt.cursorline = true
-opt.guicursor = "n-v-c:block,r-cr-o:hor20,i:ver20,a:blinkwait500-blinkoff400-blinkon150-Cursor/lCursor"
+-- opt.guicursor = "n-v-c:block,r-cr-o:hor20,i:ver20,a:blinkwait500-blinkoff400-blinkon150-Cursor/lCursor"
 opt.laststatus = 3
 opt.list = true
 opt.pumblend = 0
