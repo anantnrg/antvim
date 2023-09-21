@@ -45,6 +45,7 @@ return {
 				},
 				formatting = {
 					format = require("lspkind").cmp_format({
+						mode = "symbol_text",
 						with_text = false,
 						before = function(entry, vim_item)
 							return vim_item
