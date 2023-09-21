@@ -9,7 +9,7 @@ opt.shiftwidth = 4
 opt.number = true
 opt.relativenumber = false
 
-opt.guifont = "JetBrains Mono:h10"
+opt.guifont = "JetScript Mono:h10"
 map("n", "<C-c>", '"+y', { noremap = true, silent = true })
 map("i", "<C-v>", '<Esc>"+pa', { noremap = true, silent = true })
 set_option("clipboard", "unnamedplus")
