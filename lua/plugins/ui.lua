@@ -208,4 +208,19 @@ return {
 			})
 		end,
 	},
+	{
+		"Bekaboo/dropbar.nvim",
+		event = "UIEnter",
+		version = "*",
+		enabled = not vim.g.started_by_firenvim,
+		config = function()
+			require("dropbar").setup({
+				menu = {
+					win_configs = {
+						border = "rounded",
+					},
+				},
+			})
+		end,
+	},
 }
