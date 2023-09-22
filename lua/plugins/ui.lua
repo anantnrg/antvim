@@ -20,18 +20,18 @@ return {
 			})
 		end,
 	},
-	{
-		"petertriho/nvim-scrollbar",
-		event = "VeryLazy",
-		opts = {
-			handle = {
-				color = "#7daea3",
-			},
-			handlers = {
-				gitsigns = true,
-			},
-		},
-	},
+	-- {
+	-- 	"petertriho/nvim-scrollbar",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		handle = {
+	-- 			color = "#7daea3",
+	-- 		},
+	-- 		handlers = {
+	-- 			gitsigns = true,
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"rcarriga/nvim-notify",
 		lazy = false,
