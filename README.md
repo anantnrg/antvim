@@ -1,3 +1,5 @@
+![](https://github.com/anantnrg/nvim-conf/blob/main/showcase.png?raw=true)
+
 # nvim-conf/
 
 <a href="https://dotfyle.com/anantnrg/nvim-conf"><img src="https://dotfyle.com/anantnrg/nvim-conf/badges/plugins?style=flat" /></a>
