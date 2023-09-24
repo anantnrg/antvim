@@ -189,4 +189,7 @@ return {
 			pathStrict = true,
 		},
 	},
+	{
+		"elkowar/yuck.vim",
+	},
 }
