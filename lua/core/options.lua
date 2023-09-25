@@ -14,10 +14,7 @@ map("n", "<C-c>", '"+y', { noremap = true, silent = true })
 map("i", "<C-v>", '<Esc>"+pa', { noremap = true, silent = true })
 set_option("clipboard", "unnamedplus")
 
-g.gruvbox_material_background = "hard"
-g.gruvbox_material_enable_bold = 1
-g.gruvbox_material_enable_italic = 1
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme("catppuccin")
 
 opt.cursorline = true
 -- opt.guicursor = "n-v-c:block,r-cr-o:hor20,i:ver20,a:blinkwait500-blinkoff400-blinkon150-Cursor/lCursor"
