@@ -29,6 +29,11 @@ return {
 			compile = {
 				enabled = true,
 			},
+			color_overrides = {
+				all = {
+					base = "#181825",
+				},
+			},
 		})
 	end,
 }
