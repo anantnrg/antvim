@@ -6,10 +6,6 @@ return {
 		end,
 	},
 	{
-		"echasnovski/mini.nvim",
-		version = false,
-	},
-	{
 		"rrethy/vim-illuminate",
 		config = function()
 			require("illuminate").configure({
