@@ -132,7 +132,6 @@ return {
 			select = { enabled = true },
 		},
 	},
-	-- indent guides. kinda like rainbow indent for vscode
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufRead",
