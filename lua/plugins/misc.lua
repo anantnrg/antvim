@@ -65,8 +65,4 @@ return {
 			})
 		end,
 	},
-	{
-		"folke/twilight.nvim",
-		opts = {},
-	},
 }
