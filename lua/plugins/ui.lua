@@ -156,7 +156,7 @@ return {
 		"rcarriga/nvim-notify",
 		lazy = false,
 		opts = {
-			top_down = true,
+			top_down = false,
 			max_width = 100,
 		},
 	},
