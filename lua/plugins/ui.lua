@@ -171,24 +171,27 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		config = function()
+			local custom_catppuccin = require("lualine.themes.catppuccin-mocha")
+
+			custom_catppuccin.normal.bg = "#181825"
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
 					theme = "catppuccin-mocha",
-					component_separators = "",
-					section_separators = { left = "", right = "" },
-					section_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+					component_separators = { left = "", right = "" },
 				},
 				sections = {
 					lualine_a = {
-						{ "mode", separator = { left = "" }, right_padding = 8 },
+						{ "mode", separator = { left = "", right = "" }, right_padding = 8 },
 					},
 					lualine_b = { "filename", "branch" },
 					lualine_c = { "fileformat" },
 					lualine_x = {},
 					lualine_y = { "filetype", "searchcount" },
 					lualine_z = {
-						{ "location", separator = { right = "" }, left_padding = 8 },
+						{ "location", separator = { left = "", right = "" }, left_padding = 8 },
 					},
 				},
 			})
