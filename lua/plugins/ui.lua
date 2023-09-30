@@ -165,6 +165,7 @@ return {
 					diagnostics = "nvim_lsp",
 					separator_style = "thick",
 				},
+				highlights = require("catppuccin.groups.integrations.bufferline").get(),
 			})
 		end,
 	},
@@ -173,12 +174,28 @@ return {
 		config = function()
 			local custom_catppuccin = require("lualine.themes.catppuccin-mocha")
 
-			custom_catppuccin.normal.bg = "#181825"
+			custom_catppuccin.normal.a.bg = "#a6e3a1"
+			custom_catppuccin.insert.a.bg = "#f38ba8"
+			custom_catppuccin.normal.b.bg = "#cba6f7"
+			custom_catppuccin.insert.b.bg = "#cba6f7"
+			custom_catppuccin.visual.b.bg = "#cba6f7"
+			custom_catppuccin.replace.b.bg = "#cba6f7"
+			custom_catppuccin.command.b.bg = "#cba6f7"
+			custom_catppuccin.normal.b.fg = "#181825"
+			custom_catppuccin.insert.b.fg = "#181825"
+			custom_catppuccin.visual.b.fg = "#181825"
+			custom_catppuccin.replace.b.fg = "#181825"
+			custom_catppuccin.command.b.fg = "#181825"
+			custom_catppuccin.normal.b.gui = "bold"
+			custom_catppuccin.insert.b.gui = "bold"
+			custom_catppuccin.visual.b.gui = "bold"
+			custom_catppuccin.replace.b.gui = "bold"
+			custom_catppuccin.command.b.gui = "bold"
 
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
-					theme = "catppuccin-mocha",
+					theme = custom_catppuccin,
 					section_separators = { left = "", right = "" },
 					component_separators = { left = "", right = "" },
 				},
@@ -186,8 +203,8 @@ return {
 					lualine_a = {
 						{ "mode", separator = { left = "", right = "" }, right_padding = 8 },
 					},
-					lualine_b = { "filename", "branch" },
-					lualine_c = { "fileformat" },
+					lualine_b = { "filename" },
+					lualine_c = { "branch" },
 					lualine_x = {},
 					lualine_y = { "filetype", "searchcount" },
 					lualine_z = {
