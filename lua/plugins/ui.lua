@@ -7,10 +7,10 @@ return {
 		config = function()
 			require("modes").setup({
 				colors = {
-					copy = "#d8a657",
-					delete = "#e78a4e",
-					insert = "#a9b665",
-					visual = "#7daea3",
+					copy = "#f9e2af",
+					delete = "#f38ba8",
+					insert = "#a6e3a1",
+					visual = "#89b4fa",
 				},
 				line_opacity = 0.15,
 				set_cursor = true,
