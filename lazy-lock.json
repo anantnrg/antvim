@@ -28,7 +28,6 @@
   "lualine.nvim": { "branch": "master", "commit": "45e27ca739c7be6c49e5496d14fcf45a303c3a63" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "f014db32437aa61c86fc0ef1067cd2bc6a37205c" },
   "mason.nvim": { "branch": "main", "commit": "d66c60e17dd6fd8165194b1d14d21f7eb2c1697a" },
-  "mini.nvim": { "branch": "main", "commit": "e2273ec6186a7af206cc73de10970c0c3867c46d" },
   "modes.nvim": { "branch": "main", "commit": "4d97a51ebbdb649b85f6d79da0009fddd7081a6b" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "2d89ca96e08eb6e9c8e50e1bb4738bc5125c9f12" },
   "neodev.nvim": { "branch": "main", "commit": "471324e6c746284dbbdc1d357799d1911bb7e120" },
@@ -53,6 +52,7 @@
   "telescope-sg": { "branch": "main", "commit": "2e770cda77cb893035a5db5e67ea3ff45e6fc458" },
   "telescope-symbols.nvim": { "branch": "master", "commit": "f2060117d965df4a626f068a4ebbd8ee051aa076" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
+  "toggleterm.nvim": { "branch": "main", "commit": "faee9d60428afc7857e0927fdc18daa6c409fa64" },
   "vim-illuminate": { "branch": "master", "commit": "8c910b2f84ae6acd9b4b17330bb94dd783c0c11a" },
   "which-key.nvim": { "branch": "main", "commit": "7ccf476ebe0445a741b64e36c78a682c1c6118b7" },
   "yuck.vim": { "branch": "master", "commit": "9b5e0370f70cc30383e1dabd6c215475915fe5c3" }

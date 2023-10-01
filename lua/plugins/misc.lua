@@ -61,4 +61,5 @@ return {
 			})
 		end,
 	},
+	{ "akinsho/toggleterm.nvim", version = "*", opts = {} },
 }
