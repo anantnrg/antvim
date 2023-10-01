@@ -35,3 +35,6 @@ map("n", "<leader>th", builtin.colorscheme, {})
 map("n", "<Tab>", "<cmd> BufferLineCycleNext<CR>")
 map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev<CR>")
 map("n", "<leader>x", "<cmd> bd<CR>")
+
+-- Terminal
+map("n", "<C-`>", "<cmd> ToggleTerm :size 130 :direction=vertical")
