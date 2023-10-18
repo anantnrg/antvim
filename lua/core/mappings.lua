@@ -37,4 +37,4 @@ map("n", "<S-Tab>", "<cmd> BufferLineCyclePrev<CR>")
 map("n", "<leader>x", "<cmd> bd<CR>")
 
 -- Terminal
-map("n", "<leader>`", "<cmd> ToggleTerm size=120 direction=vertical<CR>")
+map("n", "<leader>`", "<cmd> ToggleTerm direction=tab<CR>")
